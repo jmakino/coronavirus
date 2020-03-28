@@ -1,0 +1,11 @@
+name: shards
+version: 0.1.0
+
+dependencies:
+  clop:
+    github: jmakino/clop-crystal
+    branch: master
+dependencies:
+   grlib:
+    github: jmakino/gr-crystal
+    branch: master
