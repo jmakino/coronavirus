@@ -107,9 +107,13 @@ end
 
 setcharheight(0.03)
 mathtex(0.5, 0.06, "t")
-mathtex(0.06, 0.5,
-        ["x", "y", "x+y"][options.i])
-  
+if options.plot_derivative
+  mathtex(0.06, 0.5,
+          ["dx/dt", "dy/dt", "d(x+y)/dt"][options.i])
+else
+  mathtex(0.06, 0.5,
+          ["x", "y", "x+y"][options.i])
+end  
 
 avals = Array(Float64).new
 options.r0.each{|rnot|
