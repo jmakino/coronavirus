@@ -56,7 +56,9 @@ x= newresults.map{|x| x[0].to_f}
 y= newresults.map{|x| x[1].to_f}
 
 ymax = y[(y.size) -1]
-setwindow(options.ylog ?  1:0 , x[x.size-1]+3, 1, options.ylog ?  ymax*1.5 :  ymax*1.1)
+
+#setwindow(options.ylog ?  1:0 , x[x.size-1]+3, 1, options.ylog ?  ymax*1.5 :  ymax*1.1)
+setwindow(0 , x[x.size-1]+3, options.ylog ?  10:0, options.ylog ?  ymax*1.5 :  ymax*1.1)
 box(x_tick:7,y_tick:10,major_y:1, ylog: options.ylog)
 
 #setwindow(0 , x[x.size-1]+3,  0, y[x.size-1]+10)
@@ -91,7 +93,7 @@ setcharheight(0.025)
 settextcolorind(1)
 text(0.6, 0.78, "Total")  
 settextcolorind(2)
-text(0.6, 0.6, "MHLW data")  
+text(0.3, 0.5, "MHLW data")  
 settextcolorind(1)
 setcharheight(0.02)
 text(0.2, 0.91, "Total number of COVID-19 deaths in Japan")
